@@ -8,21 +8,21 @@
 
 using namespace std;
 
+
 class Shop
 {
 private:
-
     string name;
     double vault;
-    vector <Driver*> Hired_Drivers;
+    vector <Driver*> hiredDrivers;
     vector <Flower*> stock;
 
 public:
-    Shop(string name_, double StartingAmount); // Construtor
+    Shop(string name, double initialBalance); // Construtor
 
     Shop();
 
-    void Set_Balance(double amount);
+    void setBalance(double amount);
 
     /**
     
@@ -35,7 +35,7 @@ public:
     
     */
     
-    bool Hire_Driver(Driver &Driver);
+    bool hireDriver(Driver &Driver);
 
     /**
     
@@ -47,7 +47,7 @@ public:
     
     */
 
-    bool Search_Flower(Flower &Flower, int amount);
+    bool isFlowerAvailable(Flower &Flower, int amount);
 
     /**
     
@@ -64,7 +64,7 @@ public:
 
     */
 
-    bool Buy_Flowers(int amount_, string name_);
+    bool buyFlowers(string name, int quantity);
 
     /**
     
@@ -72,7 +72,7 @@ public:
         This function is to Buy the Type of the Flower that the shop wants after
         it checks if it exist in the wearhouse or not
 
-        @see Search_Flower()
+        @see isFlowerAvailable()
 
         @param Flower is the Flower object passed in the funcion 
 
@@ -80,7 +80,7 @@ public:
 
     */
 
-    bool Sell_Flowers(int amount_, string name_);
+    bool sellFlowers(string name, int quantity);
 
     /**
     
@@ -91,14 +91,14 @@ public:
 
         @param Flower is the Flower object passed in the funcion 
         
-        @see Search_Flower()
+        @see isFlowerAvailable()
 
         @return True if the Flower is availabe to buy from the wearhouse and false if not
 
 
     */
 
-    bool CheckDriver(Driver &Driver);
+    bool checkDriver(Driver &Driver);
     
     ~Shop(); // destructor 
 };

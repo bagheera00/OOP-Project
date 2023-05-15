@@ -7,55 +7,52 @@
 
 using namespace std;
 
-class Customer{
-
+class Customer
+{
 protected:
-
     string name;
     int phoneNum;
     double Balance;
-    vector <Flower*> OwnedFlowers;
-    vector <int> Orders;
+    vector<Flower*> OwnedFlowers;
+    vector<int> Orders;
 
 public:
-
     Customer(); // default constructor
 
-    Customer(string name_, int phoneNum_, double balance);
+    Customer(string name, int phoneNum, double balance);
 
     /**
-     *  
-     * @brief 
-     * param constrcutor is the constructor for the class that 
-     * has parameters to assign user-wanted specific values 
+     *
+     * @brief
+     * param constrcutor is the constructor for the class that
+     * has parameters to assign user-wanted specific values
      * to the instance variables of different objects
-     * 
-     * @param name_ is the name of the customer
-     * 
-     * @param phoneNum_ is the phone number of the customer
-     * 
+     *
+     * @param name is the name of the customer
+     *
+     * @param phoneNum is the phone number of the customer
+     *
      * @param balance is the Balance the user has to buy flowers
-     * 
-    */
+     *
+     */
 
-    virtual void ShowBalance(); // a function to show the balance of a customer
+    virtual void showBalance(); // a function to show the balance of a customer
 
-    void PlaceOrder(string FlowerName, int amount);
+    void placeOrder(string FlowerName, int amount);
 
     /**
-     * 
+     *
      * @brief
      * placeOrder is a function that allowes the user to order
      * flowers from a spacific shop
-     * 
+     *
      * @param FlowerName is the name of the flower that the customer wants
-     * 
+     *
      * @param amount is the amount of the flower that this user wants to buy
-    */
+     */
 
-    bool CheckOrder(int id); 
-    
-
+    bool checkOrder(int id);
+  
     ~Customer();
 };
 

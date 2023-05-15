@@ -1,37 +1,60 @@
 #ifndef LIB_DEF
 #define LIB_DEF
+#define SYSTEM_STATE_FILENAME "FLOWERS_SHOP_SYSTEM.state"
 
 #include <string>
 #include <vector>
-
+#include "shop.h"
+#include "customer.h"
+#include "driver.h"
+#include "flower.h"
 using namespace std;
 
-struct OrdersList
+typedef struct _order
 {
+    int orderID;
     Shop *shop;
     Driver *driver;
-    customer *OrderOwner;
+    Customer *customer;
     Flower *flower;
-};
+    struct _order *nextOrder;
+} Order;
 
-struct Node
+typedef struct _ordersList
 {
-    OrdersList Order;
-    int orderID;
-    Node *next;
-};
+    Order order;
+} OrdersList;
 
-Node *Head = nullptr;
+typedef struct _shopEntry
+{
+    Shop *shop;
+    Shop *nextShop;
+} ShopEntry;
 
-void OrderProcessing(Node *Head);
+typedef struct _shopsList
+{
+    ShopEntry shop;
+} ShopsList;
+
+OrdersList *ordersList;
+ShopsList *shopsList;
+
+bool initSystemState();
+
+bool saveSystemState();
+
+bool loadSystemState();
+
+void processOrders();
 /**
  *
  * @brief
- * It is a function that takes the head of the linked list
- * and it processes the order and sleeps for 1 second and
+ * It is a function that goes through the orders list and
+ * it processes the order and sleeps for 1 second and
  * then it goes for the next order in the list
  *
- * @param Head is a pointer to the head of the linked list
- *
  */
+
+bool fullfilOrder();
+
 #endif

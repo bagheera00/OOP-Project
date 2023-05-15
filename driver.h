@@ -17,7 +17,7 @@ private:
 
 public:
 
-    Driver(string name_, int id_, double PayRate, int phone); // Construtor
+    Driver(string name, int id, double payRate, int phone); // Construtor
 
     void getBalance(); 
 
@@ -27,7 +27,7 @@ public:
     
     */
 
-    bool set_Rate(double rate);
+    bool setRate(double rate);
 
     /**
      * 
@@ -38,19 +38,19 @@ public:
      * 
     */
 
-    void GetJob(Customer &OrderOwner);
+    void getJob(Customer &OrderOwner);
 
     /**
      * 
      * @brief
-     * GetJob is a function that takes the Object Customer and it switches the IsBusy 
+     * getJob is a function that takes the Object Customer and it switches the IsBusy 
      * var into true
      * 
      * @param OrderOwner is the Object of the Customer
      * 
     */
 
-    void ShowBalance(); 
+    void showBalance(); 
 
     ~Driver(); // destuctor
 };

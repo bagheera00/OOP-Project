@@ -9,16 +9,15 @@ using namespace std;
 class Flower
 {
 private:
-
     string name;
+    string description;
 
 public:
-
-
-    Flower(string name_); // Constructor
-
+    Flower(string name); // Constructor
+    Flower(string name,string description); // Constructor with Description
+    string getName();
+    string getDescription();
     ~Flower(); // Destructor
-
 };
 
 #endif
