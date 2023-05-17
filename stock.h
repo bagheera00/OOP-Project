@@ -12,14 +12,14 @@ class StockInfo
 private:
     Flower *flower;
     int quantity;
-    double price;
+    double sellingPrice;
 
 public:
-    StockInfo(Flower &flower, const int quantity, const double price);
+    StockInfo(Flower &flower, const int quantity, const double sellingPrice);
     int getQuantity();
     void setQuantity();
-    double getPrice();
-    void setPrice();
+    double getSellingPrice();
+    void setSellingPrice();
     ~StockInfo();
 };
 

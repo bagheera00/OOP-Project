@@ -2,7 +2,7 @@
 
 Shop::Shop(string name_, double StartingAmount){
     name = name_;
-    vault = StartingAmount;
+    balance = StartingAmount;
 }
 
 Shop::~Shop(){
@@ -10,7 +10,7 @@ Shop::~Shop(){
 }
 
 void Shop::setBalance(double amount){
-    this->vault = amount;
+    this->balance = amount;
 }
 
 bool Shop::checkDriver(Driver &Driver){

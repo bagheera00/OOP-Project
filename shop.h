@@ -13,13 +13,12 @@ class Shop
 {
 private:
     string name;
-    double vault;
+    double balance;
     vector <Driver*> hiredDrivers;
     vector <Flower*> stock;
 
 public:
     Shop(string name, double initialBalance); // Construtor
-
     Shop();
 
     void setBalance(double amount);

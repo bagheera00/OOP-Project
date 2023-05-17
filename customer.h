@@ -11,7 +11,8 @@ using namespace std;
 
 class Customer : public User
 {
-protected:
+private:
+    
     vector<Order *> orders;
 
 public:
