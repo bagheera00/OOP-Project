@@ -4,21 +4,19 @@
 #include <string>
 #include <vector>
 #include "flower.h"
+#include "order.h"
+#include "user.h"
 
 using namespace std;
 
-class Customer
+class Customer : public User
 {
 protected:
-    string name;
-    int phoneNum;
-    double Balance;
-    vector<Flower*> OwnedFlowers;
-    vector<int> Orders;
+    vector<Order *> orders;
 
 public:
     Customer(); // default constructor
-
+    Customer(string username, string password, string name, int phoneNum, double balance);
     Customer(string name, int phoneNum, double balance);
 
     /**
@@ -36,8 +34,6 @@ public:
      *
      */
 
-    virtual void showBalance(); // a function to show the balance of a customer
-
     void placeOrder(string FlowerName, int amount);
 
     /**
@@ -52,7 +48,7 @@ public:
      */
 
     bool checkOrder(int id);
-  
+
     ~Customer();
 };
 

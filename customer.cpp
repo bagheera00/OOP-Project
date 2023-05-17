@@ -1,9 +1,9 @@
 #include "customer.h"
 
-Customer::Customer(string name_, int phoneNum_, double balance){
-    name = name_;
-    phoneNum = phoneNum_;
-    Balance = balance;
+Customer::Customer(string name, int phoneNum, double balance){
+    this->name = name;
+    this->phoneNum = phoneNum;
+    this->balance = balance;
 }
 
 Customer::~Customer(){

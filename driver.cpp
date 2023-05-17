@@ -1,10 +1,11 @@
 #include "driver.h"
 
-Driver::Driver(string name_, int id_, double PayRate, int phone){
-    name = name_;
-    id = id_;
-    paymentRate = PayRate;
-    phoneNum = phone;
+Driver::Driver(int id, string name, double paymentRate, int phoneNum, double balance){
+    this->id = id;
+    this->name = name;
+    this->paymentRate = paymentRate;
+    this->phoneNum = phoneNum;
+    this->balance = balance;
 }
 
 Driver::~Driver(){

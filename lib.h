@@ -8,17 +8,9 @@
 #include "customer.h"
 #include "driver.h"
 #include "flower.h"
+#include "order.h"
 using namespace std;
 
-typedef struct _order
-{
-    int orderID;
-    Shop *shop;
-    Driver *driver;
-    Customer *customer;
-    Flower *flower;
-    struct _order *nextOrder;
-} Order;
 
 typedef struct _ordersList
 {
@@ -28,7 +20,7 @@ typedef struct _ordersList
 typedef struct _shopEntry
 {
     Shop *shop;
-    Shop *nextShop;
+    struct _shopEntry *nextShop;
 } ShopEntry;
 
 typedef struct _shopsList

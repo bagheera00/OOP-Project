@@ -10,7 +10,7 @@ Shop::~Shop(){
 }
 
 void Shop::setBalance(double amount){
-    vault =+ amount;
+    this->vault = amount;
 }
 
 bool Shop::checkDriver(Driver &Driver){
@@ -21,7 +21,7 @@ bool Shop::hireDriver(Driver &Driver){
     
 }
 
-bool Shop::buyFlowers(int amount_, string name_){
+bool Shop::buyFlowers(string name, int quantity){
 
 }
 
@@ -29,6 +29,6 @@ bool Shop::isFlowerAvailable(Flower &Flower, int amount){
 
 }
 
-bool Shop::sellFlowers(int amount_, string name_){
+bool Shop::sellFlowers(string name, int quantity){
 
 }

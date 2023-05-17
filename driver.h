@@ -4,31 +4,25 @@
 #include <vector>
 #include "shop.h"
 #include "customer.h"
+#include "user.h"
 
 using namespace std;
 
-class Driver : public Customer{
+class Driver : public User{
 private:
-
     int id; // uniqe ID for the driver
     bool isBusy; // a Bool var to know if the driver is available 
     double paymentRate; // the payment rate for the driver
     Shop employer; // the Shop which the Driver works at
 
 public:
+    Driver(); // default constructor
+    Driver(int id, string username, string password, string name, int phoneNum, double balance);
+    Driver(int id, string name, double paymentRate, int phoneNum, double balance); // Construtor
 
-    Driver(string name, int id, double payRate, int phone); // Construtor
-
-    void getBalance(); 
-
-    /**
-
-       @return the balance of the driver
+    double getRate();
     
-    */
-
     bool setRate(double rate);
-
     /**
      * 
      * @brief
@@ -49,8 +43,6 @@ public:
      * @param OrderOwner is the Object of the Customer
      * 
     */
-
-    void showBalance(); 
 
     ~Driver(); // destuctor
 };
