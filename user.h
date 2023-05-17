@@ -20,7 +20,6 @@ public:
     User(); // default constructor
 
     User(string username, string password, string name, int phoneNum, double balance);
-    User(string name, int phoneNum, double balance);
     /**
      *
      * @brief
@@ -36,10 +35,10 @@ public:
      *
      */
 
-    double getBalance(); // a function to show the balance of a customer
-    void setBalance(); // a function to show the balance of a customer
+    double getBalance(); // Getter for the User Balance
+    void setBalance(); // Setter for the User Balance
 
-    ~User();
+    ~User(); // Destructs the User in case a User Account is deleted or removed by Clean Up
 };
 
 #endif

@@ -17,9 +17,8 @@ bool App::setupShops()
 bool App::setupCustomers()
 {
     Customer *currentCustomer;
-    for (int i = 1; i <= CUSTOMERS_COUNT; i++)
-    {
-        currentCustomer = new Customer();
+    for (int i = 1; i <= CUSTOMERS_COUNT; i++){
+        // currentCustomer = new Customer();
         this->customersList.push_back(currentCustomer);
     }
 }
@@ -55,17 +54,16 @@ bool App::setupSampleOrders()
 void App::login()
 {
     RUN_MODE runMode;
-
     switch (runMode)
     {
     case RUN_SHOP:
-        runShop();
+        // runShop();
         break;
     case RUN_CUSTOMER:
-        runCustomer();
+        // runCustomer();
         break;
     case RUN_DRIVER:
-        runDriver();
+        // runDriver();
         break;
     }
 }
@@ -74,24 +72,25 @@ void App::logout()
 {
 }
 
-void App::runShop()
+void App::runShop(Shop* shop)
 {
 }
 
-void App::runCustomer()
+void App::runCustomer(Customer* customer)
 {
 }
 
-void App::runDriver()
+void App::runDriver(Driver* driver)
 {
 }
 
 App::App()
 {
+    this->initApp();
 }
 
 App::~App()
-{
+{   
 }
 
 bool App::initApp()

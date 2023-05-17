@@ -17,6 +17,13 @@ enum OrderType
     BOUQUET = 1
 };
 
+enum OrderStatus{
+    PENDING = 0,
+    IN_PROGRESS = 1,
+    DELIVERED = 2,
+    CANCELLED = 3
+};
+
 typedef struct _orderDetail
 {
     vector<Flower *> flowers;
@@ -29,6 +36,7 @@ class Order
 {
 private:
     int orderID;
+    OrderStatus orderStatus;
     Shop *shop;
     Driver *driver;
     Customer *customer;

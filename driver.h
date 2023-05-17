@@ -8,43 +8,67 @@
 
 using namespace std;
 
-class Driver : public User{
+class Driver : public User
+{
 private:
-    int id; // uniqe ID for the driver
-    bool isBusy; // a Bool var to know if the driver is available 
-    double paymentRate; // the payment rate for the driver
-    Shop employer; // the Shop which the Driver works at
+    int id;                         // uniqe ID for the driver
+    Shop employer;                  // the Shop which the Driver works at
+    vector<Order *> assignedOrders; // Orders assigned to this driver
+
+    void setOrderDelivered(Order *order);
+    /**
+     *
+     * @brief
+     * Sets an assigned Order as delivered
+     *
+     * @param order - order to set a delivered
+     */
 
 public:
-    Driver(); // default constructor
-    Driver(int id, string username, string password, string name, int phoneNum, double balance);
-    Driver(int id, string name, double paymentRate, int phoneNum, double balance); // Construtor
-
-    double getRate();
-    
-    bool setRate(double rate);
+    Driver();                                                                            // default constructor
+    Driver(string username, string password, string name, int phoneNum, double balance); // Constructor with the rquired data
     /**
-     * 
+     *
      * @brief
-     * Set the Rate which the driver is paid apon
-     * 
-     * @param rate 
-     * 
-    */
+     * param constrcutor is the constructor for the class that
+     * has parameters to assign user-wanted specific values
+     * to the instance variables of different objects
+     *
+     * @param username - username of the Driver (Base Class Attribute)
+     * @param password - password of the Driver (Base Class Attribute)
+     * @param name - name of the Driver (Base Class Attribute)
+     * @param phoneNum - phone number of the Driver (Base Class Attribute)
+     * @param balance - amount of cash collected by Driver from a Client (Base Class Attribute)
+     *
+     */
 
-    void getJob(Customer &OrderOwner);
-
+    void deliverOrder(Order *order);
     /**
-     * 
+     *
      * @brief
-     * getJob is a function that takes the Object Customer and it switches the IsBusy 
-     * var into true
-     * 
-     * @param OrderOwner is the Object of the Customer
-     * 
-    */
+     * Delivers order and sets it as delivered,
+     * if and only if Order wasn't cancelled
+     *
+     * @param order - order to deliver
+     *
+     */
 
-    ~Driver(); // destuctor
+    void returnBalanceToShop();
+    /**
+     *
+     * @brief
+     * Returns the collected balance (Cash) from Customers
+     * and sets Driver balance to 0
+     *
+     */
+
+    ~Driver();
+    /**
+     *
+     * @brief
+     * Destructs the Driver when Driver is deleted or cleaned up
+     *
+     */
 };
 
 #endif
