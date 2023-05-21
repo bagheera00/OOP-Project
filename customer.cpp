@@ -2,8 +2,7 @@
 #include "order.h"
 #include "app.h"
 
-Customer::Customer(App* app, string username, string password, string name, int phoneNum, double balance)
-    : User(username, password, name, phoneNum, balance)
+Customer::Customer(App* app, string username, string password, string name, string phoneNum, double balance)
 {
     // Constructor implementation
 }

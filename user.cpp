@@ -5,7 +5,7 @@ User::User()
     // Default constructor implementation
 }
 
-User::User(string username, string password, string name, int phoneNum, double balance)
+User::User(string username, string password, string name, string phoneNum, double balance)
 {
     // Constructor implementation
 }

@@ -1,28 +1,34 @@
 #include "utils.h"
 #include "vector"
 
-template <typename T>
-void printVectorList(string listTitle, vector<T> listOfItems)
+string generatePhoneNumber(int prefix)
 {
-    for (int i = 0; i < listOfItems.size(); i++) {
-        cout << "(" << i + 1 << ") ";
-        cout << listOfItems[i] << endl;
+    string phoneNumber = to_string(prefix);
+    for (int i = 0; i < 9; ++i)
+    {
+        phoneNumber += to_string(rand() % 10);
     }
+    return phoneNumber;
 }
 
-template <class T>
-void printPrintableVectorList(string listTitle, vector<T> listOfItems){
-        for (int i = 0; i < listOfItems.size(); i++) {
-        cout << "(" << i + 1 << ") ";
-        cout << listOfItems[i].print() << endl;
-   }
-}
+string generateName()
+{
+    int namesCount = 15; //Number of First Names & Last Names
 
-template <typename T>
-T requestInput(string question){
-    cout << endl << question << endl;
-    T data;
-    cout << "Input:>";
-    cin >> data;
-    return data;
+    string firstNames[] = {
+        "John", "Emma", "Michael", "Olivia", "William",
+        "Sophia", "James", "Ava", "Benjamin", "Isabella",
+        "Mark", "Dave", "Joe", "Maria", "Sarah"
+    };
+
+    string lastNames[] = {
+        "Smith", "Johnson", "Williams", "Brown", "Jones",
+        "Miller", "Davis", "Garcia", "Wilson", "Anderson",
+        "Davidson", "Alberts", "Jackson", "Maxwell", "Phoenix"
+    };
+
+    int firstNameIndex = rand() % namesCount;
+    int lastNameIndex = rand() % namesCount;
+
+    return firstNames[firstNameIndex] + " " + lastNames[lastNameIndex];
 }

@@ -10,19 +10,37 @@ Flower::Flower(string name, string description)
     // Constructor with description implementation
 }
 
+Flower::~Flower()
+{
+    // Destructor implementation
+}
+
 string Flower::getName()
 {
-    // Function implementation
     return name;
 }
 
 string Flower::getDescription()
 {
-    // Function implementation
     return description;
 }
 
-Flower::~Flower()
+double Flower::getStockingPrice()
 {
-    // Destructor implementation
+    return stockingPrice;
+}
+
+void Flower::setName(string name)
+{
+    this->name = name;
+}
+
+void Flower::setDescription(string description)
+{
+    this->description = description;
+}
+
+void Flower::setStockingPrice(double stockingPrice)
+{
+    this->stockingPrice = stockingPrice;
 }

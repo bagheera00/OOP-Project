@@ -1,8 +1,13 @@
 #include "shop.h"
 
+int Shop::defaultShopsCounter = 1;
+
 Shop::Shop()
 {
     // Default constructor implementation
+    this->name = "shop-" + this->defaultShopsCounter;
+    this->balance = DEFAULT_SHOP_BALANCE;
+    this->defaultShopsCounter++;
 }
 
 Shop::Shop(string name, double initialBalance)

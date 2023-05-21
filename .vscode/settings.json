@@ -1,7 +1,10 @@
 {
     "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe",
     "files.associations": {
+        "*.gd": "gdscript",
         "vector": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }

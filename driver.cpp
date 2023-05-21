@@ -1,12 +1,25 @@
 #include "driver.h"
 
+int Driver::defaultDriverCounter = 1;
+
 Driver::Driver()
 {
     // Default constructor implementation
+    this->username = "driver-" + this->defaultDriverCounter;
+    this->password = "password-" + this->defaultDriverCounter;
+    this->name = generateName();
+    this->phoneNum = generatePhoneNumber(4);
+    this->balance = 0;
+    this->defaultDriverCounter++;
 }
 
-Driver::Driver(string username, string password, string name, int phoneNum, double balance)
+Driver::Driver(string username, string password, string name, string phoneNum, double balance)
 {
+    this->username = username;
+    this->password = password;
+    this->name = name;
+    this->phoneNum = phoneNum;
+    this->balance = balance;
     // Constructor with required data implementation
 }
 

@@ -13,13 +13,13 @@ protected:
     string username;
     string password;
     string name;
-    int phoneNum;
+    string phoneNum;
     double balance;
  
 public:
     User(); // default constructor
 
-    User(string username, string password, string name, int phoneNum, double balance);
+    User(string username, string password, string name, string phoneNum, double balance);
     /**
      *
      * @brief

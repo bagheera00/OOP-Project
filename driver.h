@@ -14,6 +14,7 @@ private:
     int id;                         // uniqe ID for the driver
     Shop* employer;                  // the Shop which the Driver works at
     vector<Order*> assignedOrders; // Orders assigned to this driver
+    static int defaultDriverCounter; // Static counter to allow generation of sample drivers - Initial Value: 0
 
     void setOrderDelivered(Order *order);
     /**
@@ -26,7 +27,7 @@ private:
 
 public:
     Driver();                                                                            // default constructor
-    Driver(string username, string password, string name, int phoneNum, double balance); // Constructor with the required data
+    Driver(string username, string password, string name, string phoneNum, double balance); // Constructor with the required data
     /**
      *
      * @brief
@@ -69,6 +70,7 @@ public:
      * Destructs the Driver when Driver is deleted or cleaned up
      *
      */
+
 };
 
 #endif

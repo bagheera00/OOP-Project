@@ -1,5 +1,6 @@
 #ifndef SHOP_DEF
 #define SHOP_DEF
+#define DEFAULT_SHOP_BALANCE 50
 
 #include <string>
 #include <vector>
@@ -18,6 +19,8 @@ private:
     vector<Driver *> hiredDrivers;
     Stock stock;
     bool isAvailable;
+    static int defaultShopsCounter; // Static counter to allow generation of sample shops - Initial Value: 0
+
 
     bool isFlowerAvailable(Flower &Flower, int amount);
     /**
@@ -70,8 +73,8 @@ private:
 
 
 public:
-    Shop(string name, double initialBalance); // Construtor
     Shop();
+    Shop(string name, double initialBalance); // Construtor
 
     void setBalance(double amount);
     /**

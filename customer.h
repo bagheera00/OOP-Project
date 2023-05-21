@@ -22,7 +22,7 @@ private:
 
 public:
 
-    Customer(App* app, string username, string password, string name, int phoneNum, double balance);
+    Customer(App* app, string username, string password, string name, string phoneNum, double balance);
     /**
      *
      * @brief

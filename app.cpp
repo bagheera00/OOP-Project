@@ -1,20 +1,20 @@
 #include "app.h"
+#include "time.h"
 
 App::App()
 {
+    // Intializes a random seed to make sure randomly generated numbers different
+    srand(time(0));
+
     // Initiate any special params
 }
 
 bool App::setupShops()
 {
     Shop *currentShop;
-    double defaultBalance = 500;
-    for (int i = 1; i <= SHOPS_COUNT; i++)
+    for (int i = 0; i < SHOPS_COUNT; i++)
     {
-        string shopName = "Shop #";
-        shopName.append(to_string(i));
-        currentShop = new Shop(shopName, defaultBalance);
-
+        currentShop = new Shop();
         this->shopsList.push_back(currentShop);
     }
 
@@ -24,7 +24,7 @@ bool App::setupShops()
 bool App::setupCustomers()
 {
     Customer *currentCustomer;
-    for (int i = 1; i <= CUSTOMERS_COUNT; i++)
+    for (int i = 0; i < CUSTOMERS_COUNT; i++)
     {
         // currentCustomer = new Customer();
         this->customersList.push_back(currentCustomer);
@@ -36,14 +36,14 @@ bool App::setupDrivers()
 {
     int nextShopIndex = 0;
     Driver *driver;
-    for (int i = 1; i <= DRIVERS_COUNT; i++)
+    for (int i = 0; i < DRIVERS_COUNT; i++)
     {
         driver = new Driver();
-
         nextShopIndex = (nextShopIndex + 1) % SHOPS_COUNT;
         shopsList[nextShopIndex]->hireDriver(*driver);
     }
-        return true;
+
+    return true;
 }
 
 bool App::setupSampleOrders()
@@ -64,6 +64,12 @@ bool App::setupSampleOrders()
 
 void App::login()
 {
+    // string username = requestInput<string>("Insert username:");
+    // string password = requestInput<string>("Insert password:");
+
+    // cout << "Username:" << username << endl;
+    // cout << "Password:" << password << endl;
+
     RUN_MODE runMode;
     switch (runMode)
     {
@@ -108,22 +114,27 @@ bool App::initApp()
         cout << "Setup shops failed!" << endl;
         return false;
     }
-    if (this->setupDrivers())
+    if (!this->setupDrivers())
     {
         cout << "Setup drivers failed!" << endl;
         return false;
     }
 
-    if (this->setupCustomers())
+    if (!this->setupCustomers())
     {
         cout << "Setup customers failed!" << endl;
         return false;
     }
 
-    if (this->setupSampleOrders())
+    if (!this->setupSampleOrders())
     {
         cout << "Setup sample orders failed!" << endl;
         return false;
+    }
+
+
+    while(this->appRunning){
+        login();
     }
 
     return true;

@@ -8,6 +8,7 @@
 
 #include <string>
 #include <vector>
+#include "utils.h"
 #include "flower.h"
 #include "shop.h"
 #include "customer.h"
@@ -30,7 +31,7 @@ private:
     vector<Customer *> customersList; // Tracks all Customers using the Application
     vector<Order *> ordersList;       // Tracks all unfinished Orders in the Application
     vector<Flower *> flowersList;       // Tracks all unfinished Orders in the Application
-
+    bool appRunning;
 
     bool setupFlowers();
     /**
