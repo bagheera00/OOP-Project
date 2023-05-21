@@ -1,6 +1,8 @@
 #include "order.h"
+#include "shop.h"
+#include "driver.h"
 
-int Order::getOrderID() const
+int Order::getOrderID() 
 {
     return orderID;
 }
@@ -10,7 +12,7 @@ void Order::setOrderID(int orderID)
     orderID = orderID;
 }
 
-Shop *Order::getShop() const
+Shop *Order::getShop() 
 {
     return shop;
 }
@@ -20,7 +22,7 @@ void Order::setShop(Shop *shop)
     shop = shop;
 }
 
-Driver *Order::getDriver() const
+Driver *Order::getDriver() 
 {
     return driver;
 }
@@ -30,7 +32,7 @@ void Order::setDriver(Driver *driver)
     driver = driver;
 }
 
-Customer *Order::getCustomer() const
+Customer *Order::getCustomer() 
 {
     return customer;
 }
@@ -40,7 +42,7 @@ void Order::setCustomer(Customer *customer)
     customer = customer;
 }
 
-vector<OrderDetail *> Order::getDetails() const
+vector<OrderDetail *> Order::getDetails() 
 {
     return details;
 }
@@ -50,7 +52,7 @@ void Order::setDetails(vector<OrderDetail *> details)
     details = details;
 }
 
-double Order::getBalance() const
+double Order::getBalance() 
 {
     return totalPrice;
 }

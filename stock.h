@@ -15,7 +15,7 @@ private:
     double sellingPrice; // price of a Flower at which Customer can buy
 
 public:
-    StockInfo(Flower &flower, const int quantity, const double sellingPrice);
+    StockInfo(Flower &flower, int quantity, double sellingPrice);
 
     int getQuantity();
     

@@ -1,7 +1,8 @@
 #include "utils.h"
+#include "vector"
 
 template <typename T>
-void printVectorList(const string listTitle, vector<T> listOfItems)
+void printVectorList(string listTitle, vector<T> listOfItems)
 {
     for (int i = 0; i < listOfItems.size(); i++) {
         cout << "(" << i + 1 << ") ";
@@ -10,7 +11,7 @@ void printVectorList(const string listTitle, vector<T> listOfItems)
 }
 
 template <class T>
-void printPrintableVectorList(const string listTitle, vector<T> listOfItems){
+void printPrintableVectorList(string listTitle, vector<T> listOfItems){
         for (int i = 0; i < listOfItems.size(); i++) {
         cout << "(" << i + 1 << ") ";
         cout << listOfItems[i].print() << endl;
@@ -18,7 +19,7 @@ void printPrintableVectorList(const string listTitle, vector<T> listOfItems){
 }
 
 template <typename T>
-T requestInput(const string question){
+T requestInput(string question){
     cout << endl << question << endl;
     T data;
     cout << "Input:>";

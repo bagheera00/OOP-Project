@@ -8,11 +8,12 @@
 
 #include <string>
 #include <vector>
+#include "flower.h"
 #include "shop.h"
 #include "customer.h"
 #include "driver.h"
-#include "flower.h"
 #include "order.h"
+
 using namespace std;
 
 enum RUN_MODE
@@ -31,7 +32,7 @@ private:
     vector<Flower *> flowersList;       // Tracks all unfinished Orders in the Application
 
 
-    bool App::setupFlowers();
+    bool setupFlowers();
     /**
      *      @brief - Setups up a number of initial Shops in the Application
      *                  and adds them to the "shopsList" Vector
@@ -40,7 +41,7 @@ private:
      *
      */
 
-    bool App::setupShops();
+    bool setupShops();
     /**
      *      @brief - Setups up a number of initial Shops in the Application
      *                  and adds them to the "shopsList" Vector
@@ -49,7 +50,7 @@ private:
      *
      */
 
-    bool App::setupCustomers();
+    bool setupCustomers();
     /**
      *      @brief - Setups up a number of initial Customers in the Application
      *                  and adds them to the "customersList" Vector
@@ -58,7 +59,7 @@ private:
      *
      */
 
-    bool App::setupDrivers();
+    bool setupDrivers();
     /**
      *      @brief - Setups up a number of initial drivers in the Application,
      *                  and assigns each to a different Shop
@@ -67,7 +68,7 @@ private:
      *
      */
 
-    bool App::setupSampleOrders();
+    bool setupSampleOrders();
     /**
      *      @brief - Setups up a number of initial Sample (Example) Orders in the Application
      *                  and adds them to the "ordersList" Vector
@@ -76,13 +77,13 @@ private:
      *
      */
 
-    void App::login();
+    void login();
     /**
      *      @brief - Does the Login Process to access Shop, Customer or Driver
      *
      */
 
-    void App::logout();
+    void logout();
     /**
      *      @brief - Setups up a number of initial Shops in the Application
      *                  and adds them to the "shopsList" Vector
@@ -91,7 +92,7 @@ private:
      *
      */
 
-    void App::runShop(Shop *shop);
+    void runShop(Shop *shop);
     /**
      *      @brief - Run by "login()" functions to access and work with a specific Shop
      *
@@ -99,7 +100,7 @@ private:
      *
      */
 
-    void App::runCustomer(Customer *customer);
+    void runCustomer(Customer *customer);
     /**
      *      @brief - Run by "login()" functions to access and work with a specific Customer
      *
@@ -107,7 +108,7 @@ private:
      *
      */
 
-    void App::runDriver(Driver *driver);
+    void runDriver(Driver *driver);
     /**
      *      @brief - Run by "login()" functions to access and work with a specific Driver
      *
@@ -119,7 +120,7 @@ public:
     App();
     ~App();
 
-    bool App::initApp();
+    bool initApp();
     /**
      *      @brief - Initiates the Application
      *
@@ -132,7 +133,7 @@ public:
      *
      */
 
-    vector<Shop *> getAvailableShops();
+    vector<Shop*> getAvailableShops();
     /**
     @brief
     Returns a Vector list with all the Shops
@@ -145,6 +146,9 @@ public:
     */
 
    void addNewFlower(Flower* flower);
+
+
+   void removeFlower();
 
 
 

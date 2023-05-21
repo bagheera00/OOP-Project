@@ -3,11 +3,12 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 template <typename T>
-void printVectorList(const string listTitle, vector<T> listOfItems);
+void printVectorList(string listTitle, vector<T> listOfItems);
 /**
 *    @brief
 *    Prints a vector list using the OStream operator on
@@ -19,7 +20,7 @@ void printVectorList(const string listTitle, vector<T> listOfItems);
 
 
 template <class T>
-void printPrintableVectorList(const string listTitle, vector<T> listOfItems);
+void printPrintableVectorList(string listTitle, vector<T> listOfItems);
 /**
 *    @brief
 *    Prints a vector list using "print()" function inside the Vector element classes
@@ -30,7 +31,7 @@ void printPrintableVectorList(const string listTitle, vector<T> listOfItems);
 */
 
 template <typename T>
-T requestInput(const string question);
+T requestInput(string question);
 /**
 *    @brief
 *    Prints a Question and returns the provided Input using Generic T

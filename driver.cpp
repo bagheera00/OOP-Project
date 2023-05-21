@@ -1,13 +1,31 @@
 #include "driver.h"
 
-Driver::Driver(int id, string name, double paymentRate, int phoneNum, double balance){
-    this->id = id;
-    this->name = name;
-    this->paymentRate = paymentRate;
-    this->phoneNum = phoneNum;
-    this->balance = balance;
+Driver::Driver()
+{
+    // Default constructor implementation
 }
 
-Driver::~Driver(){
+Driver::Driver(string username, string password, string name, int phoneNum, double balance)
+{
+    // Constructor with required data implementation
+}
 
+void Driver::setOrderDelivered(Order* order)
+{
+    // Function implementation
+}
+
+void Driver::deliverOrder(Order* order)
+{
+    // Function implementation
+}
+
+void Driver::returnCashToShop()
+{
+    // Function implementation
+}
+
+Driver::~Driver()
+{
+    // Destructor implementation
 }

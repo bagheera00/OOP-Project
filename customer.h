@@ -4,11 +4,16 @@
 #include <string>
 #include <vector>
 #include "flower.h"
-#include "order.h"
 #include "user.h"
-#include "app.h"
 
 using namespace std;
+
+/* 
+    Forward Declerations - To avoid Circular Dependencies
+    Actual Includes are done in customer.cpp
+*/
+class App;
+class Order;
 
 class Customer : public User
 {
@@ -16,7 +21,8 @@ private:
     vector<Order *> orders; // List of all the pending Orders
 
 public:
-    Customer(App app, string username, string password, string name, int phoneNum, double balance);
+
+    Customer(App* app, string username, string password, string name, int phoneNum, double balance);
     /**
      *
      * @brief
@@ -34,7 +40,7 @@ public:
      */
 
 
-    void createOrder();
+    Order* createOrder();
     /**
      *
      * @brief
@@ -42,7 +48,7 @@ public:
      *
      */
 
-    void addToOrder(Order order, string FlowerName, int amount);
+    void addToOrder(Order* order, string FlowerName, int amount);
     /**
      *
      * @brief
@@ -52,6 +58,18 @@ public:
      * @param FlowerName - name of the flower that the customer wants
      * @param amount - amount of the flower that this user wants to buy
      */
+
+
+    void submitOrder(Order*);
+    /**
+     * 
+     * @brief
+     * Perform Order placement into the Application ordersList.
+     * 
+     * @see ordersList for list of Orders to process
+     * 
+     */
+
 
     bool checkOrder(Order *order);
     /**

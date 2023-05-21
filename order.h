@@ -3,13 +3,19 @@
 
 #include <string>
 #include <vector>
-#include "shop.h"
-#include "customer.h"
-#include "driver.h"
 #include "flower.h"
 #include "utils.h"
+#include "customer.h"
 
 using namespace std;
+
+
+/* 
+    Forward Declerations - To avoid Circular Dependencies
+    Actual Includes are done in order.cpp
+*/
+class Shop;
+class Driver;
 
 enum OrderType
 {
@@ -17,7 +23,8 @@ enum OrderType
     BOUQUET = 1
 };
 
-enum OrderStatus{
+enum OrderStatus
+{
     PENDING = 0,
     IN_PROGRESS = 1,
     DELIVERED = 2,
@@ -45,27 +52,26 @@ private:
     Order *nextOrder;
 
 public:
-    int Order::getOrderID() const;
-    void Order::setOrderID(int orderID);
+    int getOrderID();
+    void setOrderID(int orderID);
 
-    Shop* Order::getShop() const;
-    void Order::setShop(Shop *shop);
+    Shop *getShop();
+    void setShop(Shop *shop);
 
-    Driver* Order::getDriver() const;
-    void Order::setDriver(Driver *driver);
+    Driver *getDriver();
+    void setDriver(Driver *driver);
 
-    Customer* Order::getCustomer() const;
-    void Order::setCustomer(Customer *customer);
+    Customer *getCustomer();
+    void setCustomer(Customer *customer);
 
-    vector<OrderDetail *> Order::getDetails() const;
-    void Order::addDetail(OrderDetail* orderDetail);
-    void Order::setDetails(vector<OrderDetail *> details);
+    vector<OrderDetail *> getDetails();
+    void addDetail(OrderDetail *orderDetail);
+    void setDetails(vector<OrderDetail *> details);
 
-    double Order::getBalance() const;
-    void Order::setBalance(double balance);
-    
-    virtual void Order::print();
+    double getBalance();
+    void setBalance(double balance);
 
+    virtual void print();
 };
 
 string getOrderTypeAsString(OrderType orderType);
